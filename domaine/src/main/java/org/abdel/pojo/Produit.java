@@ -1,4 +1,4 @@
-package org.abdel.application.domain;
+package org.abdel.pojo;
 
 /**
  * Created by ABDELCHAG on 23/02/2019.
