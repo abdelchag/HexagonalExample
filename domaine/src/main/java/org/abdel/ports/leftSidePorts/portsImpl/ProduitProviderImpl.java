@@ -13,7 +13,7 @@ public class ProduitProviderImpl implements IProvideProduit {
 
     private IGetProduit produitGetter;
 
-    ProduitProviderImpl(IProvideProduit produitManager){
+    ProduitProviderImpl(IGetProduit produitGetter){
         this.produitGetter = produitGetter;
     }
 

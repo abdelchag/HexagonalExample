@@ -5,9 +5,9 @@ import org.abdel.pojo.Produit;
 /**
  * Created by ABDELCHAG on 24/02/2019.
  */
-public interface IManageProduit {
+public interface IManageProduit  {
 
-    Produit createProduit(Produit produit);
+    Produit createProduit(Produit produit) throws Exception;
 
     Produit updateProduit(Produit produit);
 

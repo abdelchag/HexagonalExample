@@ -27,4 +27,7 @@ public class ListOfProduits {
        return database.contains(p);
     }
 
+    public Set<Produit> getDatabase() {
+        return database;
+    }
 }

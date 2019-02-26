@@ -17,7 +17,7 @@ public class ProduitReceiverImpl implements IReceiveProduit {
         this.produitManager = produitManager;
     }
 
-    public Produit createProduit(Produit produit) {
+    public Produit createProduit(Produit produit) throws Exception {
         return this.produitManager.createProduit(produit);
     }
 

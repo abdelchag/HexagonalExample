@@ -7,7 +7,7 @@ import org.abdel.pojo.Produit;
  */
 public interface IReceiveProduit {
 
-    Produit createProduit(Produit produit);
+    Produit createProduit(Produit produit) throws Exception;
 
     Produit updateProduit(Produit produit);
 

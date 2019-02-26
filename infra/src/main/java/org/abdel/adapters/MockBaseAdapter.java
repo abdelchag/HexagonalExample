@@ -6,6 +6,7 @@ import org.abdel.pojo.Produit;
 import org.abdel.ports.rightSidePorts.IGetProduit;
 import org.abdel.ports.rightSidePorts.IManageProduit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,12 +20,13 @@ public class MockBaseAdapter implements IGetProduit, IManageProduit {
         database = new ListOfProduits();
     }
 
-    public Produit createProduit(Produit produit) {
+    public Produit createProduit(Produit produit) throws Exception {
         org.abdel.entities.Produit entitieProd = ProduitMapper.mapProduit(produit);
         if(database.exist(entitieProd)){
-            System.out.println("ERROR");
+            throw new Exception("FOUND !!");
         }
         database.insert(entitieProd);
+        System.out.println("IT'S OK !!");
         return produit;
     }
 
@@ -45,6 +47,8 @@ public class MockBaseAdapter implements IGetProduit, IManageProduit {
     }
 
     public List<Produit> getAllProduit() {
-        return null;
+        List<org.abdel.entities.Produit> database = new ArrayList<>();
+        database.addAll(this.database.getDatabase());
+;        return ProduitMapper.listEntiteToListPojo(database);
     }
 }

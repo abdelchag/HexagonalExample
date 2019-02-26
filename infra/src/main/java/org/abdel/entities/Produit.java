@@ -61,12 +61,13 @@ public class Produit implements Comparable {
 
     public int compareTo(Object obj) {
         Produit prod2 = (Produit) obj;
-        if(this.getId() == null){
+        /*if(this.getId() == null){
             return -1;
         }else if(prod2.getId() == null){
             return 1;
-        }
+        }*/
 
-        return this.getId().compareTo(prod2.getId());
+        //return this.getId().compareTo(prod2.getId());
+        return this.getDesignation().compareTo(prod2.getDesignation());
     }
 }
